@@ -1,10 +1,35 @@
-$color--black: #fff;
+// Default variable overrides
+$primary: #65C9FF;
+$container-max-widths: (
+  sm: 540px,
+  md: 704px,
+  lg: 924px,
+  xl: 1140px,
+  xxl: 1364px
+);
 
-body {
-  background-color: $color--black;
-  h1 {
-    display: flex;
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
-    color: royalblue;
+@import "./home";
+
+header {
+  .container {
+    span {
+      display: block;
+      width: min-content;
+      margin: 0 auto;
+      padding: 25px 0;
+
+      color: $primary;
+      font-family: "Oswald", sans-serif;
+      font-size: 50px;
+      cursor: pointer;
+
+    }
   }
 }
