@@ -2,14 +2,12 @@
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 // export
 module.exports = {
   // 파일을 읽어들이기 시작하는 진입점 설정
-  entry: {
-    router: './src/router.js',
-    app: './src/index.js'
-  },
+  entry: './src/js/index.js',
 
   // 결과물(번들)을 반환하는 설정
   output: {
@@ -22,10 +20,6 @@ module.exports = {
   // 모듈 처리 방식을 설정
   module: {
     rules: [
-      {
-        test: /\.hbs$/,
-        loader: 'handlebars-loader'
-      },
       {
         test: /\.s?css$/,
         use: [
@@ -59,7 +53,8 @@ module.exports = {
       patterns: [
         { from: 'static' }
       ]
-    })
+    }),
+    new Dotenv()
   ],
 
   // 개발 서버 옵션

@@ -4,37 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MovieSearch</title>
+  <title>SearchMovie</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      line-height: 1.4;
-      font-family: "Roboto", sans-serif;
-    }
-  </style>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
 </head>
 
 <body>
+  <header>
+    <div class="container">
+      <span>SearchMovie</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <input class="form-control" placeholder="Search for Movies!">
   
-  <div>
-    <!--Link-->
-    <header>
-      <div class="container">
-        <span class="history" route="/">MovieSearch</span>
+      <div class="selects">
+        <select class="form-select">
+          <option>movie</option>
+        </select>
+        <select class="form-select">
+          <option>All Years</option>
+        </select>
       </div>
-    </header>
 
-    <span class="history" route="/movie">Movie</span>
+      <button class="btn btn-primary">Apply</button>
+    </div>
+  </main>
 
-
-    <!--Content-->
-    <div id="app"></div>
-  </div>
+  <section class="movieList">
+    <div class="container">
+      <ul class="movies">
+        <p>영화를 검색하세요!</p>
+      </ul>
+    </div>
+  </section>
 
 
 </body>

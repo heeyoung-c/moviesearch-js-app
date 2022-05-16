@@ -8,14 +8,25 @@ $container-max-widths: (
   xxl: 1364px
 );
 
-// Required
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
-@import "../../node_modules/bootstrap/scss/root";
+// bootstarp
+// @import "../../node_modules/bootstrap/scss/functions";
+// @import "../../node_modules/bootstrap/scss/variables";
+// @import "../../node_modules/bootstrap/scss/mixins";
+// @import "../../node_modules/bootstrap/scss/root";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-@import "./home";
+img {
+  display: block;
+}
+
+ul {
+  padding: 0;
+}
+
+body {
+  line-height: 1.4;
+  font-family: "Roboto", sans-serif;
+}
 
 header {
   .container {
@@ -29,7 +40,110 @@ header {
       font-family: "Oswald", sans-serif;
       font-size: 50px;
       cursor: pointer;
+    }
+  }
+}
 
+main {
+  .container {
+    display: flex;
+    > * {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .selects {
+      display: flex;
+      select {
+        width: 120px;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .btn {
+      width: 120px;
+      color: $white;
+      flex-shrink: 0;
+    }
+    @include media-breakpoint-down(lg) {
+      display: block;
+      input {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      .selects {
+        margin-right: 0;
+        margin-bottom: 10px;
+        select {
+          width: 100%;
+        }
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+section.movieList {
+  margin-top: 30px;
+  .movies {
+    display: flex;
+    flex-wrap: wrap;
+    height: 130px;
+    justify-content: center;
+    background-color: rgba($primary, .1);
+    padding: 10px 0;
+    border-radius: 4px;
+    .movie {
+      $width: 200px;
+      width: $width;
+      height: $width * 3 / 2;
+      margin: 10px;
+      border-radius: 4px;
+      background-color: $gray-400;
+      background-size: cover;
+      overflow: hidden;
+      position: relative;
+      &:hover::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: 6px solid $primary;
+      }
+      .info {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 14px;
+        background-color: rgba($black, .3);
+        font-size: 14px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        .year {
+          color: $primary;
+        }
+        .title {
+          overflow: hidden;
+          color: $white;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    p {
+      margin: auto 0;
+      color: $gray-400;
+    }
+    .spinner-border {
+      margin: auto 0;
     }
   }
 }
