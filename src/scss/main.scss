@@ -93,7 +93,6 @@ section.movieList {
   .movies {
     display: flex;
     flex-wrap: wrap;
-    height: 130px;
     justify-content: center;
     background-color: rgba($primary, .1);
     padding: 10px 0;
@@ -139,11 +138,13 @@ section.movieList {
       }
     }
     p {
-      margin: auto 0;
+      height: 130px;
+      padding-top: (130px / 2);
       color: $gray-400;
     }
     .spinner-border {
-      margin: auto 0;
+      flex-shrink: 0;
+      margin: 55px 300px 55px;
     }
   }
 }
