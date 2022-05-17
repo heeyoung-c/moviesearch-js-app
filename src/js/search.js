@@ -9,7 +9,7 @@ const search = () => {
     }
   })
 }
-
+const OMDB_API_KEY = '7035c60c'
 const searchEl = document.querySelector('input')
 const searchBtnEl = document.querySelector('button.btn')
 const moviesEl = document.querySelector('ul.movies')
@@ -65,7 +65,7 @@ const _requestDiffSizeImage = (url, size = 700) => url.replace('SX300', `SX${siz
 const _fetchMovies = (name, page) => {
   _loading(true)
   return new Promise((resolve, reject) => {
-    axios.get(`https://www.omdbapi.com?apikey=${process.env.OMDB_API_KEY}&s=${name}&page=${page}`)
+    axios.get(`https://www.omdbapi.com?apikey=${OMDB_API_KEY}&s=${name}&page=${page}`)
       .then(res => {
         switch (res.data.Error) {
           case 'Too many results.': reject(_errorHandler(true))
