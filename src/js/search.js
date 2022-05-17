@@ -1,6 +1,5 @@
 import axios from 'axios'
 import _uniqBy from 'lodash/uniqBy'
-const { OMDB_API_KEY } = process.env
 
 const search = () => {
   searchBtnEl.addEventListener('click', async () => { searchMovies(true) })
@@ -66,7 +65,7 @@ const _requestDiffSizeImage = (url, size = 700) => url.replace('SX300', `SX${siz
 const _fetchMovies = (name, page) => {
   _loading(true)
   return new Promise((resolve, reject) => {
-    axios.get(`https://www.omdbapi.com?apikey=${OMDB_API_KEY}&s=${name}&page=${page}`)
+    axios.get(`https://www.omdbapi.com?apikey=${process.env.OMDB_API_KEY}&s=${name}&page=${page}`)
       .then(res => {
         switch (res.data.Error) {
           case 'Too many results.': reject(_errorHandler(true))
