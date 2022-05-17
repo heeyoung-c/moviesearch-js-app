@@ -52,7 +52,7 @@ const searchMovies = async (isFirst) => {
   })
 
   // 영화 추가 요청
-  if (count < parseInt(totalResults) / 10 ) {
+  if (count < parseInt(totalResults, 10) / 10 ) {
     infiniteScroll()
     count += 1
   }

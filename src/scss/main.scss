@@ -9,10 +9,6 @@ $container-max-widths: (
 );
 
 // bootstarp
-// @import "../../node_modules/bootstrap/scss/functions";
-// @import "../../node_modules/bootstrap/scss/variables";
-// @import "../../node_modules/bootstrap/scss/mixins";
-// @import "../../node_modules/bootstrap/scss/root";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 img {
@@ -144,7 +140,7 @@ section.movieList {
     }
     .spinner-border {
       flex-shrink: 0;
-      margin: 55px 300px 55px;
+      margin: 55px 1000px 55px;
     }
   }
 }
