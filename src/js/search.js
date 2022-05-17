@@ -1,5 +1,6 @@
 import axios from 'axios'
 import _uniqBy from 'lodash/uniqBy'
+const { OMDB_API_KEY } = process.env
 
 const search = () => {
   searchBtnEl.addEventListener('click', async () => { searchMovies(true) })
@@ -63,7 +64,6 @@ const _requestDiffSizeImage = (url, size = 700) => url.replace('SX300', `SX${siz
 
 // API를 통해 영화 정보 가져오기
 const _fetchMovies = (name, page) => {
-  const OMDB_API_KEY = '7035c60c'
   _loading(true)
   return new Promise((resolve, reject) => {
     axios.get(`https://www.omdbapi.com?apikey=${OMDB_API_KEY}&s=${name}&page=${page}`)
